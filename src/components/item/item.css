@@ -1,0 +1,36 @@
+h1, h4{
+    color: white;
+  }
+img{
+    width: 200px;
+    height: 160px;
+    border-radius: 10px;
+}
+.contiene-producto{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: white solid 1pt;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.contiene-imagen{
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.contiene-detalle{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.contiene-producto{
+    display: flex;
+    width: 30%;
+}

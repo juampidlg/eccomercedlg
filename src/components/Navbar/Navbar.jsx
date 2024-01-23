@@ -8,31 +8,32 @@ function Navbar() {
     <nav className='nav'>      
     <div>
       <ul className='nav-list'>
-        <li className='dropdown'> <a href='#'>Productos de despensa</a>
+        <li className='dropdown'> <a href='#'>Almacén</a>
           <div className='dropdown-content' >
-            <a href='#'>Aceites y vinagres</a>
-            <a href='#'>Arroces y pastas</a>
-            <a href='#'>Harinas y cereales</a>
-            <a href='#'>Salsas y condimentos</a>
-            <a href='#'>Conservas y enlatados</a>
-            <a href='#'>Legumbres y granos</a>
+            <a href='#'>Aceites y Vinagres</a>
+            <a href='#'>Aderezos y Condimentos</a>
+            <a href='#'>Caldos y Sopas</a>
+            <a href='#'>Conservas y Legumbres</a>
+            <a href='#'>Dulces y Mermeladas</a>
+            <a href='#'>Arroz y Cereales</a>
           </div>
         </li>
         <li className='dropdown'> <a href='#'>Bebidas</a>
           <div className='dropdown-content' >
-            <a href='#'>Aguas y refrescos</a>
-            <a href='#'>Jugos y bebidas naturales</a>
+            <a href='#'>Aguas</a>
+            <a href='#'>Amargos</a>
             <a href='#'>Tés y cafés</a>
-            <a href='#'>Bebidas alcohólicas</a>
-            <a href='#'>Bebidas energéticas</a>
+            <a href='#'>Vinos y Espumantes</a>
+            <a href='#'>Cervezas</a>
+            <a href='#'>Gaseosas</a>
           </div>
         </li>
-        <li className='dropdown'> <a href='#'>Frescos y perecederos</a>
+        <li className='dropdown'> <a href='#'>Frescos</a>
           <div className='dropdown-content' >
-            <a href='#'>Frutas y verduras</a>
-            <a href='#'>Carnes y Aves</a>
-            <a href='#'>Productos lácteos</a>
-            <a href='#'>Panadería y pasteleria</a>            
+            <a href='#'>Fiambres</a>
+            <a href='#'>Lácteos</a>
+            <a href='#'>Pastas</a>
+            <a href='#'>Quesos</a>            
           </div>
         </li>
       </ul>        
