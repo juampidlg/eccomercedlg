@@ -5,6 +5,7 @@ img{
     width: 200px;
     height: 160px;
     border-radius: 10px;
+    
 }
 .contiene-producto{
     width: 33%;
@@ -33,4 +34,10 @@ img{
 .contiene-producto{
     display: flex;
     width: 30%;
+}
+.Option:hover{
+    cursor: pointer;
+    scale: 1.2;
+    background-color: #333;
+    color:white;
 }

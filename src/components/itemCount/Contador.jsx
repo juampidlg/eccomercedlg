@@ -21,7 +21,8 @@ const Contador = ({valorInicial, stock, agregar}) => {
             <h4 className='numero'>{cantidad}</h4>
             <button className='boton' onClick={sumar}>+</button>            
         </div>
-        <button className='boton-carrito' onClick={()=> agregar(cantidad)} disabled={stock===0}>Agregar al Carrito</button>
+        <button className='boton-carrito' onClick={()=> agregar(cantidad)} disabled={stock==0}>Agregar al Carrito</button>
+        {stock==0? <p style={{color: '#F21E40'}}>No hay stock del producto seleccionado</p>: stock<=3? <p style={{color: 'yellow'}}>Atención!! Solo quedan {stock} productos </p> : '' }
 
     </div>
   )

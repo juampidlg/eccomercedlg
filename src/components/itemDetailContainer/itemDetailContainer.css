@@ -1,9 +1,5 @@
-.contieneLista{
+.itemDetailContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.titulo{
-   text-align: left;
-   padding-left: 25px;
 }

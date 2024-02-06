@@ -1,0 +1,10 @@
+.CardItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1pt solid whitesmoke;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    min-width: 550px;
+    margin-bottom: 20px;
+}
