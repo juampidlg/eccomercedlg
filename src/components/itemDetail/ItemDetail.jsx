@@ -2,8 +2,9 @@ import React from 'react'
 import Contador from '../itemCount/Contador'
 import './itemDetail.css'
 
-const ItemDetail = ({id,rubro,categoria,nombre,img,precio, stock}) => {
-  return (
+const ItemDetail = ({id,rubro,categoria,nombre,img,precio, stock}) => {    
+    
+    return (
     <article className='CardItem'>
         <header className='Header'>
             <h2 className='ItemHeader'>
@@ -21,16 +22,14 @@ const ItemDetail = ({id,rubro,categoria,nombre,img,precio, stock}) => {
                 Categoria: {categoria}                
             </p>
             <p className='Info'>
-                {stock==0? 'Precio: no Disponible' : `Precio $: ${precio}`}                
+                {stock===0? 'Precio: no Disponible' : `Precio $: ${precio}`}                
             </p>
             <p className='Info'>
-                Stock: {stock}
-                
+                Stock: {stock}                
             </p>
-
         </section>
         <footer className='ItemFooter'>
-            <Contador valorInicial={0} stock={stock} agregar={(cantidad)=> console.log('cantidad agregada', cantidad)}/>
+            <Contador valorInicial={0} stock={stock} descripcion={nombre} precio={precio} id={id} imagen={img}/>            
         </footer>
     </article>
   )

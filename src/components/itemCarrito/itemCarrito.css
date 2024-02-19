@@ -1,0 +1,126 @@
+
+.imgGestionCarrito{
+    width: 15vh;
+    height: auto;
+    border-radius: 10px;
+}
+.imgGestionCarrito:hover{
+    scale: 2.5;
+}
+.btn-gestionCarrito{
+    width: 1.8em;
+    height: 1.8em;
+    font-size: 1.5em;
+}
+.imgBorrar{
+    width: 90%;
+    height: 70%;
+}
+.article {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border: solid 1pt white;
+    margin: 1px 15px;
+    border-radius: 10px ;
+    }
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / 3;
+    margin-bottom: 5px;
+    
+}
+.descripcion-GestionCarrito{
+    
+    grid-column: 3 / 7 ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.botones-GestionCarrito{
+    grid-column: 7 / 9;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-gestionCarrito:hover{
+    cursor:pointer;
+    scale:1.3;
+}
+.leyenda{
+    font-size: 11px;
+}
+h5{    
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+@media(max-width: 412px){
+    .descripcion-GestionCarrito{    
+        grid-column: 3 / 7 ;
+        display: flex;
+        flex-direction: column;        
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .imgGestionCarrito{
+        width: 10vh;
+        height: auto;
+        border-radius: 10px;
+    }
+    .botones{
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        
+    }
+    p{
+        font-size: 0.8em;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    h2{
+        font-size: 0.8em;
+    }
+    .contiene-totales{
+        text-align: center;
+    }
+    h5{
+        font-size: 12px;
+    }
+    .botones-GestionCarrito{
+        grid-column: 7 / 9;
+        display: flex;
+        flex-direction: column;           
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-gestionCarrito{
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 1.4em;
+    }
+
+}
+

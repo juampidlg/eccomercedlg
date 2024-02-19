@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 import './navbar.css';
 import logo from '../../archivos/LOGO.png'
+import menu from '../../archivos/barra-de-menus.png'
+import { useAppContext } from '../../context/Context'
 
 function Navbar() {
+  const { carrito } = useAppContext();
+  const [menuVisible, setMenuVisible]=useState((window.innerWidth <= 412)? false : true)
+
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  }
+    
   return (
     <>       
     <nav className='nav'>
-    <img src={logo} alt='logo' className='logo' />
+    
     <Link to='/' className='link'>
-      <h4>Home</h4>
-  </Link>
-     
-    <div>
-      <ul className='nav-list'>
-        <li className='dropdown'> <a href='#'>Almacén</a>
-          <div className='dropdown-content' >
-           {/*<a href='#'>Aceites y Vinagres</a>*/} 
+      <img src={logo} alt='logo' className='logo' />      
+    </Link>
+    
+    <div className='ul'>
+    <h3 className='menu-productos' onClick={toggleMenu}><img src={menu} className='logo-menu' /></h3>
+      <ul className='nav-list' style={{ display: menuVisible ? 'block' : 'none' }} >
+        <li className='dropdown'><h3 className='rubro'><Link to={'/rubro/Almacen'} className='link-rubro'>Almacén</Link></h3>        
+          <div className='dropdown-content' >            
             <NavLink to={'/categoria/Aceites y Vinagres'} className='dropdown-item'>Aceites y Vinagres</NavLink>
             <NavLink to={'/categoria/Aderezos y Condimentos'}className='dropdown-item'>Aderezos y Condimentos</NavLink>
             <NavLink to={`/categoria/Caldos y Sopas`}className='dropdown-item'>Caldos y Sopas</NavLink>
@@ -26,7 +35,7 @@ function Navbar() {
             <NavLink to={`/categoria/Arroz y Cereales`}className='dropdown-item'>Arroz y Cereales</NavLink>           
           </div>
         </li>
-        <li className='dropdown'> <a href='#'>Bebidas</a>
+        <li className='dropdown'><h3  className='rubro'><Link to={'/rubro/Bebidas'} className='link-rubro'>Bebidas</Link></h3>        
           <div className='dropdown-content' >
             <NavLink to={'/categoria/Aguas'}>Aguas</NavLink>
             <NavLink to={'/categoria/Amargos'}>Amargos</NavLink>            
@@ -36,7 +45,7 @@ function Navbar() {
             <NavLink to={'/categoria/Gaseosas'}>Gaseosas</NavLink>
           </div>
         </li>
-        <li className='dropdown'> <a href='#'>Frescos</a>
+        <li className='dropdown'><h3  className='rubro'><Link to={'/rubro/Frescos'} className='link-rubro'>Frescos</Link></h3>        
           <div className='dropdown-content' >
             <NavLink to={'/categoria/Fiambres'}>Fiambres</NavLink>
             <NavLink to={'/categoria/Lacteos'}>Lácteos</NavLink>
@@ -44,12 +53,27 @@ function Navbar() {
             <NavLink to={'/categoria/Quesos'}>Quesos</NavLink>            
           </div>
         </li>
-      </ul>        
+      </ul>
+      
     </div>
-    <CartWidget />
+    <div className='contiene-cartwidget'>
+      <ul>
+        <li className='dropdown'> <div ><CartWidget /></div>
+          <div className='dropdown-content' >            
+            <ul className='lista-carrito'>
+              {carrito.map((item) => (
+                <li key={item.id} className='item-carrito'>
+                  {item.cantidad} - {item.descripcion} - ${item.precio} c/u.-                    
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      </ul>     
+      </div>
+      
     </nav>
-    </>
-    
+    </>    
   )
 }
 

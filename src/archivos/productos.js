@@ -1,4 +1,5 @@
-let productos = [
+
+/*let productos = [
     {
     "id": "1",
     "Rubro": "Almacen",
@@ -1059,7 +1060,7 @@ let productos = [
     "Nombre": "Bondiola Marolio Envasado al vacio 1 kg",
     "Imagen": "https://maxiconsumo.com/media/catalog/product/cache/8313a15b471f948db4d9d07d4a9f04a2/1/8/18056.jpg",
     "Precio": "16497.49",
-    "Stock": "5"
+    "Stock": 5
     },
     {
     "id": 119,
@@ -1332,3 +1333,17 @@ let productos = [
         })
 
     }
+
+    export const obtenerProductoRubro = (rubroId)=>{
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve(productos.filter(prod => prod.Rubro === rubroId))
+                
+            }, 1000)
+        })
+
+    }*/
+
+    
+
+   
