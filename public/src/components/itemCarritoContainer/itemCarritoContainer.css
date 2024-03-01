@@ -1,0 +1,28 @@
+.contiene-gestionCarrito{
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.contiene-totales{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+.contiene-botones{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+
+}
+.btn-contieneTotales{
+    width: 100px;
+    border-radius: 5px;
+}
+.btn-contieneTotales:hover{
+    cursor:pointer;
+    scale:1.3;
+}

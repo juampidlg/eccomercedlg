@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# ECCOMERCEDLG - E-market
+## Descripción:
+Somos una plataforma dedicada a ofrecerte una experiencia de compra en línea que simplifica tu vida diaria. Descubre la comodidad de tener tus productos de supermercado favoritos al alcance de un clic, con entrega rápida y opciones de calidad.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Acerca del Proyecto
+Desarrollado con React y librerias externas (firebase/sweetalert2), estilos con CSS.
 
-## Available Scripts
+## Requisitos previos:
+* Node.js
+* IDE (para ejecutar el proyecto e instalar los módulos necesarios. Ej: VS Code)
+* Navegador web.
 
-In the project directory, you can run:
+## Instrucciones de instalación y ejecución:
+Una vez clonado o descargado el repositorio, abre tu IDE de preferencia y ejecuta los siguientes comandos en la consola:
 
-### `npm start`
+- npm install
+- npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El primer comando instalará los módulos necesarios para que funcione la aplicación, mientras que el segundo la ejecutará a nivel local para poder interactuar con la misma.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Recursos externos:
+Para el funcionamiento del proyecto, utiliza el servicio de Firestore Database almacenando en esta base de datos no sql:
+* Productos    
+* Ordenes de Compra
 
-### `npm test`
+## Diseño responsive
+La estructura del sitio tiene características distintas para pantallas de hasta 412 px (punto de quiebre) y superiores, a fin de poder mostrar de manera más organizada los datos al usuario.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Uso del proyecto:
 
-### `npm run build`
+En la Página Principal, se presenta un listado aleatorio del contenido disponible en el sitio. Puede explorar el contenido a través del Navbar, interactuando con los rubros y/o categorias de productos. Se utilizan rutas dinámicas y reutilización de componentes para llegar a filtrar la opción elegida por el usuario, permitiendo a través de la opción "ver detalle", ingresar al producto seleccionado, ver todas sus características y agregarlo al carrito.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En el Navbar y sobre el margen superior derecho se muestra el carrito que muestra de manera dinámica su contenido actual (cantidad de Items, productos e importe total). También se destaca la posibilidad de mostrar de manera desplegable y hacia abajo el listado de productos agregados ante el desplazamiento del mouse por sobre el componente.
+Todo esto permite tener una visión completa del carrito, antes de ingresar al mismo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Durante la selección de productos, tenemos la posibilidad de seleccionar desde 1 elemento hasta la cantidad que cuente en el stock actual del mismo. Si un producto no tiene stock, no permite su selección ni se muestra su precio, si tiene hasta 3 unidades depliega una advertencia sobre su cantidad actual en stock.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Una vez completada la selección de productos, podemos acceder al carrito a través del "tooltip" que se despliega al desplazarse por el mismo ó haciendo click sobre su imagen.
 
-### `npm run eject`
+El carrito nos muestra un detalle de los productos agregados, con la posibilidad de agregar, quitar o eliminar por completo. En este punto, también se realizan los controles sobre el stock actual.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Decidido su contenido y previo a poder comprar, debemos validar el stock. Esto así, porque no siempre la compra es inmediata a la carga del carrito, por lo tanto, el sistema obliga a validar las cantidades contra el stock actual, mostrando una leyenda que indica cuando un producto tiene más unidades que las disponibles. Solo se habilita la opción de compra cuando se ha ejecutado esta validación y no hay productos cargados por sobre su stock.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Una vez ejecutada la opción de compra, pasamos al formulario de validación, donde debemos cargar los datos necesarios para confeccionar la Orden de Compra. Aquí también hacemos validación de que no falten datos y que el email coincida con su confirmación. Una validad la entrada de datos por el usuario, se habilita el botón "confirmar".
+Dicha confirmación genera una Orden de compra que se almacena en la base de datos, informando el ID de la misma para seguimiento al usuario.
+En este punto se produce el alta de dicha orden de compra en la base de datos y además la actualización del stock de los productos involucrados en la misma.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Despliegue de la aplicación
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+La aplicación se aloja en el servidor de hosting de Firebase, pudiendo acceder a la misma a través de:
+- https://ecommerce-dlg.web.app/
+- https://ecommerce-dlg.firebaseapp.com/
 
-## Learn More
+## Screenshots
+![alt Vista Home](.//src/ImagenesReadme/home.jpg)
+![alt Vista Rubros](.//src/ImagenesReadme/Rubros.jpg)
+![alt Vista Categorias](.//src/ImagenesReadme/Categorias.jpg)
+![alt Vista Detalle](.//src/ImagenesReadme/Detalle.jpg)
+![alt Vista Carrito](.//src/ImagenesReadme/Carrito.jpg)
+![alt Vista Mobile](.//src/ImagenesReadme/Mobile.jpg)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Desarrollador
+Juan Pablo Wibaux
+De La Garma - Pcia de BsAs - Argentina
+Estudiante Desarrollador Web Full Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

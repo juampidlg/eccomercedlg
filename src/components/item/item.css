@@ -16,36 +16,31 @@ h1, h4{
     border-radius: 10px;
 }
 .contiene-producto{
-    width: 33%;
+    width: 30%;
     display: flex;
     justify-content:start;
     align-items: center;
     border: white solid 1pt;
-    /*margin: 5px;
-    padding: 5px;*/
+    margin: 5px;   
     border-radius: 10px;
-    /*gap: 10px;*/
-    
 }
 .contiene-imagen{
     display: flex;
     justify-content: center;    
     align-items:center;
     margin: 2px;
+    padding: 5px;
     
 }
-.contiene-detalle{
-    /*margin-left: 10px;*/
+.contiene-detalle{   
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-left: 5px;
 }
-/*.contiene-producto{
-    display: flex;
-    width: 30%;
-}*/
+
 .Option:hover{
     cursor: pointer;
     scale: 1.2;
@@ -63,15 +58,12 @@ h1, h4{
 @media (max-width:412px){
     .contiene-producto{
         display: flex;
-        flex-direction: column;        
-        /*margin: 1px;
-        padding: 1px;*/
+        flex-direction: column;
         align-items: center;
         justify-content:start;        
     }
     .nombre{
         font-size: 10px;
-        
     }
     .precio{
         font-size: 8px;

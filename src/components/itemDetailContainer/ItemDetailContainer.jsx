@@ -12,19 +12,12 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(()=>{
-        
         const db = getFirestore(firebaseApp)
         const prodRef = doc(db,"productos",id);
-    
         getDoc(prodRef).then((snapshot)=>{
             if(snapshot.exists()){
                 setProducto({id:snapshot.id, ...snapshot.data()})
-                console.log({id:snapshot.id, ...snapshot.data()});
-                
-            }else{
-                console.log('Producto no encontrado')
-                }})
-                
+            }})
             },[]);
     return (
         <div className='itemDetailContainer'>

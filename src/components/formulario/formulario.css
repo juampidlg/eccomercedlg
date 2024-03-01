@@ -9,6 +9,7 @@
     border: solid 1px whitesmoke;
     border-radius: 20px;
     padding: 50px;
+    
 }
 .contiene-input{
     display: flex;
@@ -29,4 +30,11 @@
 .btn-enviar:hover{
     cursor:pointer;
     scale: 1.2;
+}
+
+@media(max-width: 412px){
+    .formulario{
+        max-width: 65%;
+    }
+
 }

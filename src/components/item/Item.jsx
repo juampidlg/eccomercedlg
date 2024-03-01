@@ -8,8 +8,7 @@ const Item = ({id,rubro,categoria,nombre,img,precio, stock}) => {
     <div className='contiene-producto'>
         <div className='contiene-imagen'>
           <img className='img-listaProductos' src={img} alt={nombre}/>
-        </div>
-        {/*<img src={img} alt={nombre}/>*/}
+        </div>        
         <div className='contiene-detalle'>
             <p className='nombre'>{nombre}</p>        
             <p className='precio'>$ {precio}</p>            

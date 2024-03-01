@@ -22,7 +22,6 @@ const Contador = ({valorInicial, stock, descripcion, precio, id, imagen}) => {
     function agregarAlCarrito(producto){        
         const existeProducto = carrito.find((p) => p.id === producto);
     if (existeProducto) {
-      // Si el producto ya está en el carrito, aumentar la cantidad
       const nuevoCarrito = carrito.map((p) => {
         if (p.id === producto) {
           p.cantidad = p.cantidad + cantidad;
@@ -31,7 +30,6 @@ const Contador = ({valorInicial, stock, descripcion, precio, id, imagen}) => {
       });
       setCarrito(nuevoCarrito);
     } else {
-      // Si el producto no está en el carrito, agregarlo
       const nuevoCarrito = [...carrito, {id,cantidad,descripcion,precio,imagen, stock}];
       setCarrito(nuevoCarrito);
     }   

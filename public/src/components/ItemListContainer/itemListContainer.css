@@ -1,0 +1,43 @@
+
+.contieneLista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 120px;*/
+}
+.titulo{
+   text-align: left;
+   padding-left: 25px;
+   margin-top: 135px;
+}
+.img-listaProductos{
+    width: 25vh;
+    height: auto;
+}
+
+@media (max-width:412px){
+    .titulo{
+        text-align: center;
+        padding-left: 5px;
+        margin-top: 70px;
+    }
+    .listaProductos{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    .contieneLista{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*margin-top: 120px;*/
+     }
+     .img-listaProductos{
+        width: 15vh;
+        height: auto;
+    }
+    .contiene-producto{
+        margin: 5px 10px;
+    }
+}

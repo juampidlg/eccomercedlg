@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 import './navbar.css';
-import logo from '../../archivos/LOGO.png'
-import menu from '../../archivos/barra-de-menus.png'
+import logo from '../../assets/LOGO.png'
+import menu from '../../assets/barra-de-menus.png'
 import { useAppContext } from '../../context/Context'
 
 function Navbar() {
   const { carrito } = useAppContext();
   const [menuVisible, setMenuVisible]=useState((window.innerWidth <= 412)? false : true)
 
+  
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   }

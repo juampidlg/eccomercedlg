@@ -8,8 +8,7 @@ const ItemList = ({productos}) => {
     <div className='listaProductos'>
         {productos.map(producto=>
             <Item key={producto.id} id = {producto.id} rubro={producto.Rubro} categoria = {producto.Categoria} nombre = {producto.Nombre} img = {producto.Imagen} precio = {producto.Precio} stock = {producto.Stock}/>
-            
-            )}        
+      )}        
     </div>
   )
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './itemCarrito.css'
-import borrar from '../../archivos/borrar.png'
+import borrar from '../../assets/borrar.png'
 import { useAppContext } from '../../context/Context'
+import Swal from 'sweetalert2';
 
 
-const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
+const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,disponibilidad}) => {
 
   const pcio = Math.round(precio*100)/100;
   const cant = Math.round(cantidad*100)/100;
@@ -14,12 +15,12 @@ const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
 
   const sumar = (producto)=>{
     const nuevoCarrito = carrito.map((p) => {
-      if (p.id == producto) {        
+      if (p.id === producto) {        
         if(p.stock > p.cantidad){
           p.cantidad = p.cantidad + 1;
           setLeyendaCarrito('')
           }
-        if(p.stock==p.cantidad){
+        if(p.stock===p.cantidad){
             setBtnSumar(true)
             setLeyendaCarrito('Alcanzo el máximo de productos en stock')
           }
@@ -38,7 +39,7 @@ const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
     
     const restar = (producto)=>{
     const nuevoCarrito = carrito.map((p) => {
-      if (p.id == producto) {
+      if (p.id === producto) {
         if(cant > 0){
           p.cantidad = p.cantidad - 1;
           setLeyendaCarrito('')
@@ -47,7 +48,7 @@ const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
           setBtnSumar(false)
           setLeyendaCarrito('')
         }
-        if(p.cantidad==0){
+        if(p.cantidad===0){
           setLeyendaCarrito('Ha quitado todos los productos')
         }
       }
@@ -60,10 +61,29 @@ const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
           setTotalCarrito(Math.round(((totalCarrito) - (1*precio))*100)/100)
           setUnidadesCarrito(unidadesCarrito - 1)      
       }
+      const alert =()=>{ Swal.fire({
+        title: "Está seguro que desea eliminar?",
+        text: "No podrá deshacer la eliminación!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, eliminar!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          eliminarProducto(id)
+          Swal.fire({
+            title: "Eliminado!",
+            text: `El producto ha sido eliminado`,
+            icon: "success"
+          });
+        }
+      })};
 
       const eliminarProducto = (id) => {
       const nuevoCarrito = carrito.filter((item) => item.id !== id);
       setCarrito(nuevoCarrito);
+            
       };
 
       useEffect(()=>{
@@ -99,10 +119,11 @@ const ItemCarrito = ({id,descripcion,imagen,precio,cantidad,stock}) => {
         <div className='botones-GestionCarrito'>
           <div className='botones'>
             <button className='btn-gestionCarrito' onClick={()=>{sumar(id)}} disabled={btnSumar}>+</button> 
-            <button className='btn-gestionCarrito' onClick={()=>{restar(id)}} disabled={cantidad==0}>-</button>
-            <button className='btn-gestionCarrito' onClick={()=>{eliminarProducto(id)}}><img src={borrar} className='imgBorrar'/></button>         
+            <button className='btn-gestionCarrito' onClick={()=>{restar(id)}} disabled={cantidad===0}>-</button>
+            <button className='btn-gestionCarrito' onClick={()=>{alert()}}><img src={borrar} className='imgBorrar'/></button>         
           </div>
-          <p className='leyenda'>{leyendaCarrito}</p>
+          <p className='leyenda'>{leyendaCarrito}</p>          
+            <p>{disponibilidad}</p>                   
         </div>
     </article>
   )

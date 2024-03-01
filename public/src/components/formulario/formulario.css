@@ -1,0 +1,32 @@
+.formulario{
+    margin-top: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    text-align: center;
+    gap:5px;
+    border: solid 1px whitesmoke;
+    border-radius: 20px;
+    padding: 50px;
+}
+.contiene-input{
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    text-align: center;
+    gap:10px;
+    margin-bottom: 10px;
+}
+.input{
+    border-radius: 10px;
+    width: 300px;
+}
+.btn-enviar{
+    width: 50%;
+    border-radius: 10px;
+}
+.btn-enviar:hover{
+    cursor:pointer;
+    scale: 1.2;
+}
